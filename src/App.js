@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import firebase from '../src/firebase';
-import Dummy from '../src/pages';
+import UserForm from '../src/pages/UserForm';
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <div className="App">
-        <Dummy/>
+        <UserForm/>
       </div>
     );
   }
-}
 
 export default App;

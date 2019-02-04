@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-import {Col,Card,Row,CardBody,CardHeader,Button,FormGroup,Input,Label} from 'reactstrap';
+import {Col,Card,CardBody,CardHeader,Button,FormGroup,Input,Label} from 'reactstrap';
+import { Field, reduxForm } from 'redux-form';
 
-class Dummy extends Component {
+class UserForm extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {inputValue: ''};
   }
 
-  handleSubmit = (event) => {
-    console.log('called',event);
-    // console.log('function called',this.setState({value:event.target.value}));
-  }
+  // handleSubmit = (event) => {
+  //   console.log('called',event);
+  //   // console.log('function called',this.setState({value:event.target.value}));
+  // }
+
+// handleSubmit(){
+//   console.log('handleSubmit called');
+//   console.log('Your input value is: ' + this.state.inputValue)
+// //Send state to the server code
+// }
+
   render() {
 
     return (
@@ -24,13 +32,14 @@ class Dummy extends Component {
           </CardHeader>
           <CardBody>
             <FormGroup>
-              <Label>Upload Employee Image</Label>
-                <Input
+              <Label></Label>
+                <Field
                   name="profilePicture"
                   type="file"
                   id="file-input"
                   accept="image/*"
-                  // value={this.state.value}
+                  label="Upload Employee Image"
+                  // value={this.state.inputValue}
                 />
             </FormGroup>
             <br />
@@ -40,7 +49,7 @@ class Dummy extends Component {
               name="name"
               type="text"
               inputplaceholder="Enter Name"
-              // value={this.state.value}
+              // value={this.state.inputValue}
             />
             </FormGroup>
                 <br />
@@ -50,7 +59,7 @@ class Dummy extends Component {
                   name="age"
                   type="text"
                   inputplaceholder="Enter Age"
-                  // value={this.state.value}
+                  // value={this.state.inputValue}
                 />
             </FormGroup>
             <br />
@@ -60,7 +69,7 @@ class Dummy extends Component {
               name="address"
               type="text"
               inputplaceholder="Enter Address"
-              // value={this.state.value}
+              // value={this.state.inputValue}
             />
             </FormGroup>
             <br />
@@ -70,7 +79,7 @@ class Dummy extends Component {
               name="mobileNo"
               type="text"
               inputplaceholder="+91"
-              // value={this.state.value}
+              // value={this.state.inputValue}
             />
             </FormGroup>
             <br />
@@ -85,4 +94,6 @@ class Dummy extends Component {
 
 }
 
-export default Dummy;
+export default reduxForm({
+  form: 'userDatas'
+})(UserForm);
