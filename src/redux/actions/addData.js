@@ -1,20 +1,20 @@
 import {db} from '../../../src/firebase/db';
 // import { db } from '../../../firebase';
 import {
-  ADD_DATA_STARTED,
-  ADD_DATA_COMPLETED,
-  ADD_DATA_ERROR
+  ADD_USER_STARTED,
+  ADD_USER_COMPLETED,
+  ADD_USER_ERROR
 } from '../actionTypes/addDataActionTypes';
 
 export const addDataStart = () => ({
-  type: ADD_DATA_STARTED
+  type: ADD_USER_STARTED
 });
 export const addDataSuccess = (data) => ({
-  type: ADD_DATA_COMPLETED,
+  type: ADD_USER_COMPLETED,
   payLoad: data
 });
 export const addDataFailure = () => ({
-  type: ADD_DATA_ERROR
+  type: ADD_USER_ERROR
 });
 
 export const addData = (values) => {

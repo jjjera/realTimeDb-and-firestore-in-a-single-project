@@ -5,18 +5,18 @@ import 'firebase/firestore';
 import 'firebase/storage';
 import {fbConfig} from '../config';
 
+//Storing Firebase developement configuration(dash board)
 const config = fbConfig.devConfig;
-console.log('config is',config);
 
-// console.log('condition is',!firebase.apps.length);
+//Initialize Firebase in the application
 if (!firebase.apps.length) {
   firebase.initializeApp(config);
 }
 
-
+//Fire store creation
 const fireStore = firebase.firestore();
+
+//Real time db creation
 const realTime  = firebase.database();
-// const storage = firebase.storage();
-// const auth = firebase.auth();
 
 export {realTime, fireStore};

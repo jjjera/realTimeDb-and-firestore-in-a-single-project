@@ -1,11 +1,10 @@
 import React from 'react';
-// import firebase from '../src/firebase';
-import UserForm from '../src/pages/UserForm';
+import Home from '../src/pages/home';
 
 const App = () => {
     return (
       <div className="App">
-        <UserForm/>
+        <Home/>
       </div>
     );
   }

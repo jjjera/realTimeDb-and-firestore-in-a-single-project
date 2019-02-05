@@ -1,7 +1,7 @@
 // import formReducer from './formReducer';
 import userReducer from './userReducer';
-import {combineReducer} from 'redux';
+import {combineReducers} from 'redux';
 
-const rootreducer = combineReducer({userState: userReducer});
+const rootreducer = combineReducers({userState: userReducer});
 
 export default rootreducer;
